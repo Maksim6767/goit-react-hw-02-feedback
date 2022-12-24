@@ -7,13 +7,13 @@ import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Section } from './Section/Section';
 
 const GlobalStyle = createGlobalStyle`
-  ul,h1,h2,h3,h4,h5,h6,li{list-style:none;margin:0;padding:0;};
+  ul,h1,h2,h3,h4,h5,h6,li{list-style:none; margin:0; padding:0;};
   body{
     height:100vh;
-   display: flex;
-   justify-content:center;
-   align-items:center;
-   color: '#010101'; 
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    color: '#010101'; 
   }
 `;
 export class App extends Component {
@@ -35,11 +35,13 @@ export class App extends Component {
       [currentClick]: prevState[currentClick] + 1,
     }));
   };
+  
   countPositiveFeedbackPercentage = () => {
     return this.countTotalFeedback() !== 0
       ? Math.round((this.state.good / this.countTotalFeedback()) * 100)
       : 0;
   };
+  
   render() {
     const { bad, good, neutral } = this.state;
     const {
